@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+@layer components {
+  .sidebar-icon {
+    @apply relative flex items-center justify-center
+          h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
+          bg-gray-800 text-green-500
+          hover:bg-green-600 hover:text-white
+          rounded-lg hover:rounded-full
+          transition-all duration-200 ease-linear
+          cursor-pointer;
+
+  }
+
+  .sidebar-tooltip { 
+    @apply absolute w-auto p-2 m-2 min-w-max left-14
+          rounded-md shadow-md
+          text-white bg-gray-900
+          text-xs font-bold
+          transition-all duration-100 scale-0 origin-left;
+  }
+  .sidebar-hr {
+    @apply bg-gray-800 border border-gray-800 rounded-full
+    mx-2;
+  }
+  .content-container {
+    @apply flex flex-col 
+    bg-gray-400 dark:bg-gray-700
+    m-0
+    h-full w-full 
+    overflow-hidden;
+  }
+
+  .content-list {
+    @apply flex flex-col items-center 
+    h-full w-full
+    mt-0 ml-0 mx-auto px-0 pb-12 
+    overflow-y-scroll;
+  }
+
+  .post {
+    @apply w-full
+    flex flex-row items-center justify-evenly
+    py-4 px-8 m-0
+    cursor-pointer;
+  }
+
+  .post-selected {
+    @apply bg-green-400 dark:bg-gray-900
+    shadow-md;
+  }
+
+  .post-content {
+    @apply w-4/5 
+    flex flex-col justify-start 
+    ml-auto;
+  }
+
+  .post-text {
+    @apply text-lg text-left text-gray-800 dark:text-white 
+    mr-auto whitespace-normal;
+  }
+
+  .post-owner {
+    @apply text-left font-semibold text-gray-800 dark:text-white mr-2;
+  }
+
+  .avatar-wrapper {
+    @apply flex flex-col items-center
+    w-12 
+    m-0 ml-auto mb-auto;
+  }
+
+  .avatar {
+    @apply flex-none
+    w-9 hover:w-14 h-full 
+    rounded-full shadow-md
+    object-cover bg-gray-100 
+    mb-auto mt-0 mx-0 
+    cursor-pointer;
+  }
+
+  .timestamp {
+    @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-600 ml-2;
+  }
+}
